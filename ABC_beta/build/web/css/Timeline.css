@@ -1,0 +1,201 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 10, 2016, 9:59:22 PM
+    Author     : Garvit Patel
+*/
+@font-face {
+    font-family: myFirstFont;
+    src: url(SansationLight.woff);
+}
+.row{
+    font-family: myFirstFont!important;
+}
+.timeline {
+    font-family: myFirstFont!important;
+    margin: 5px 0 0 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+}
+.timeline > li .time {
+    display: block;
+    width: fit-content;
+    padding-right: 100px;
+    padding-left: 15px;
+    position: absolute;
+}
+.timeline > li .time span:last-child {
+    font-size: 1.3em;
+    color: #3594cb;
+}
+.timeline > li:nth-child(odd) .icon {
+    background: #afdcf8;
+    box-shadow: 0 0 0 8px #46a4da;
+}
+.timeline > li:nth-child(even) .icon {
+    background: #46a4da;
+    box-shadow: 0 0 0 8px #afdcf8;
+}
+.timeline > li .icon {
+    width: 40px;
+    height: 40px;
+    font-family: 'ecoico';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-size: 1.4em;
+    line-height: 40px;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    color: #fff;
+    background: #46a4da;
+    border-radius: 50%;
+    box-shadow: 0 0 0 8px #afdcf8;
+    text-align: center;
+    left: 20%;
+    margin: 0 0 0 -25px;
+}
+.timeline > li .time span {
+    display: block;
+    text-align: right;
+}
+.timeline > li .time span:first-child {
+    font-size: 1em;
+    color: #bdd0db;
+}
+.timeline > li .time span {
+    display: block;
+    text-align: right;
+}
+.timeline > li:nth-child(odd) .panhead:after {
+    border-right-color:  #6cbfee;
+}
+.timeline > li:nth-child(even) .panhead:after {
+    border-right-color: #3594cb ;
+}
+.timeline > li .panhead:after {
+    right: 70%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-right-color: #afdcf8;
+    border-width: 10px;
+}
+.timeline > li:nth-child(odd) .pan{
+    background-color: #6cbfee;
+}
+.timeline > li:nth-child(even) .pan{
+    background-color: #3594cb;
+}
+.pan{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    background-color: #3594cb;
+    margin-bottom: 30px;
+    margin-left: 30%;
+    margin-right: 7%;
+    border-radius: 5px;
+}
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    background: #afdcf8;
+    left: 20%;
+    margin-left: -10px;
+}
+.panhead{
+    padding: 15px;
+    font-size: 25px;
+    color:white;
+    font-weight: bold;
+    border-bottom: 2px;
+}
+.panhead:hover{
+    cursor: pointer;
+}
+.panbody{
+    padding: 15px;
+    color:white;
+}
+.panbody button{
+    float: right;
+    width: 35%;
+    background-color: #337ab7;
+    color: white;
+}
+@media screen and (max-width: 900px){
+    .sidenav{
+        height: 100%!important;
+    }
+    .timeline:before {
+        content: initial;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 10px;
+        background: #afdcf8;
+        left: 20%;
+        margin-left: -10px;
+    }
+    .timeline > li .icon {
+        width: 0;
+        height: 0;
+        box-shadow: 0 0 0 0px white!important; 
+    }
+    .panbody button{
+        float: right;
+        clear:left;
+        width: 100%;
+        background-color: #337ab7;
+        color: white;
+        margin-bottom: 10px;
+    }
+    .timeline > li .time {
+        margin-left: 7%;
+        width: 100%;
+        position: relative;
+        padding: 0 0 20px 0;
+    }
+
+    .timeline > li .time span {
+        text-align: left;
+    }
+    .pan{
+        margin-left: 7%;
+    }
+    .timeline > li .panhead {
+        margin: 0 0 0px 0;
+    }
+
+    .timeline > li .panhead:after {
+        right: 82%;
+        margin-top: -32px;
+        border-right-color: transparent;
+        border-bottom-color: #3594cb;
+
+    }
+    .timeline > li .time {
+        width: 100%;
+        position: relative;
+        padding: 0 0 20px 0;
+    }
+    .timeline > li:nth-child(odd) .panhead:after {
+        border-right-color: transparent;
+        border-bottom-color: #6cbfee;
+    }
+    .timeline > li:nth-child(even) .panhead:after {
+        border-right-color: transparent;
+        border-bottom-color: #3594cb;
+    }
+}

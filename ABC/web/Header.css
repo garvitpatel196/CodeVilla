@@ -1,0 +1,98 @@
+@font-face {
+   font-family: myFirstFont;
+   src: url(fonts/SansationLight.woff);
+}
+body
+{
+    margin: 0%!important;
+    background-image: url("back3.jpg");
+    background-attachment: fixed;
+}
+ul {
+    font-family: myFirstFont!important;
+    list-style-type: none;
+    margin-top: 0px;
+    padding-top: 6px;
+    overflow: hidden;
+    background-color: #000000;
+    opacity: 0.7;
+    width: inherit;
+    font-size: 21px;
+    padding-bottom: 6px;
+    
+}
+
+li {
+    float: right;
+}
+.paragraph{   
+    position: relative;
+    top: 47px;
+
+}
+li a {
+    display: block;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    color: #00FFFA;
+    text-decoration: underline;
+}
+
+li a.active {
+    color: #00FFFA;
+    text-decoration: underline;
+}
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding:8px 12px;
+    font-size:12px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+.welcome{
+    color: #00FFFA;
+    float: left!important;
+    font-size: 25px;
+    padding: 11px 5px 5px 15px;
+    font-family: myFirstFont!important;
+    cursor: context-menu;
+}.lined {
+
+}

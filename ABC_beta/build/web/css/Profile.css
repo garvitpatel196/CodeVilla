@@ -1,0 +1,51 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 10, 2016, 2:39:58 PM
+    Author     : Garvit Patel
+*/
+@font-face {
+    font-family: myFirstFont;
+    src: url(SansationLight.woff);
+}
+.pan-head{
+    font-family: myFirstFont!important;
+    border-bottom: 1px solid;
+    font-size:30px;
+    font-weight: bold;
+    color: #3594cb;
+}
+
+.pan-body .row{
+    font-size: 20px;
+    color:#6cbfee;
+    padding: 10px;
+}
+
+.pan-body .col-sm-2{
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.pan-body .col-sm-2{
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.pan-body .col-sm-8{
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.addprof ul{
+    list-style-type: none;
+    clear: right;
+}
+.addprof li{
+    font-family: myFirstFont!important;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    padding:10px;
+    margin: 10px;
+    float: left;
+    width: fit-content;
+}

@@ -1,0 +1,104 @@
+@font-face {
+   font-family: myFirstFont;
+   src: url(fonts/SansationLight.woff);
+}
+
+body {
+   font-family: myFirstFont!important;
+}
+.login-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+.form {
+    border-radius: 7px;
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width:80%;
+    width: 80%;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+    font-family: myFirstFont!important;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.form button {
+    font-family: myFirstFont!important;
+    text-transform: uppercase;
+    outline: 0;
+    background: black;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color:#FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+.form button:hover {
+    color: white;
+    background-color:#2780e3;
+}
+.form button:active{
+    color: white;
+    background-color: #2780e3;
+}
+
+.form .message {
+    margin:5px 5px 5px 5px;   
+    color: darkred;
+    text-align: left!important;
+    font-size: 15px;
+    
+}
+.form .message a {
+    color: blue;
+    text-decoration: none;
+}
+body {
+    background: #CCCCCC; /* fallback for old browsers */
+    font-family: "Roboto", sans-serif;   
+}
+.cr{
+    font-family: myFirstFont!important;
+    text-transform: uppercase;
+    outline: 0;
+    background: #000000;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color:#FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+.output{
+    border-radius: 10px;
+    border: 2px solid black;
+    height:450px !important;
+    margin-bottom:70px;
+    background: #ffffff; 
+    width:1038px;
+    overflow-y:auto;
+    float: left;
+}
+.loading{
+    display:none;
+    width:69px;
+    height:89px;
+    border:1px solid black;
+    position:absolute;
+    top:50%;
+    left:50%;
+    padding:2px;
+}

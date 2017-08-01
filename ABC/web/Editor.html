@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <link rel="stylesheet" href="Login_style.css"> 
+        <link rel="stylesheet" href="Header.css">
+        <script src="jquery.min.js"></script>
+        <link rel="stylesheet" href="profilestyle.css">
+        <script src="jquery-linedtextarea.js"></script>
+        <link href="jquery-linedtextarea.css" type="text/css" rel="stylesheet" />
+        <title>Editor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            //for checking session (active or not)
+            function sess() {
+                $("#show1").hide();
+              }
+
+        </script>
+    </head>
+    <body onload="sess()">
+        <div style="position:fixed; z-index:99999;alignment-adjust: central;  width:100%;">
+            <ul style="clear:left;float:right;">
+                <li id="welcome" class="welcome"></li>
+                <li><a href="Logout">Logout</a></li>
+                <li><a href="Profile.jsp">My Profile</a></li>
+                <li><a class="active" href="#Editor">Editor</a></li>
+                <li><a href="Events.html">Events</a></li>
+            </ul>
+        </div>
+        <div class="form" style="float: left;margin-top:100px;margin-left: 90px;">
+            <h2 style="margin-top:0px;color: #005c81;">Editor</h2>
+            <form name="vinform" method="GET">
+
+                <div class="addprof" style="float: left;width: 38%;">
+                    <label for="filename" style="float: left">File Name:</label><br>
+                    <input type="text" value="DEMO" id="filename">
+                    <select id="prglan" style="float:left;margin-left: 20px;width: 38%;" onclick="changelan()" >
+                        <option>------
+                        <option value="c">C
+                        <option value="cpp">C++
+                        <option value="java">JAVA
+                    </select>
+                </div>
+
+                <div style="clear: left">
+                    <textarea class="lined" rows="30" cols="130" name="code" placeholder="Editor" id="t1"></textarea>
+                </div>
+                <h2 style="color: #005c81;">Inputs</h2>
+                <div>
+                    <textarea class="lined" rows="7" cols="130" name="inputs" placeholder="Inputs" id="t2"></textarea>
+                </div>
+                <div>
+                    <button type="button" class="cr" id="show" onClick="loaddoc()">Compile & Run</button>  
+                </div>
+            </form>
+
+
+            <div class="form" style="clear:left;margin-top: 30px;margin-left: 65px;margin-right: 3px!important;">
+                <h2 style="clear: left;text-align: center;color: #005c81;">Output</h2>
+                <div id="show1">
+                    <img alt="Loading..." src="loading_1.gif">
+                </div>
+                <p id="demo" style="text-align:left;margin-top:0"></p>
+            </div>
+        </div>
+        <script>
+            //For Handling compile and Run Eevent
+            function loaddoc() {
+                //for showing loading animation in output division  
+                $("#show1").show();
+                document.getElementById("demo").innerHTML = "";
+                var prglan = document.getElementById("prglan").value;
+                var str = document.getElementById("t1").value;
+                var inp = document.getElementById("t2").value;
+                var filename = document.getElementById("filename").value;
+                if (str.length === 0) {
+                    $("#show1").hide();
+                    document.getElementById("demo").innerHTML = "";
+                    return;
+                } else {
+                    //for displaying output 
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function () {
+                        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                            $("#show1").hide();
+                            document.getElementById("demo").innerHTML = xmlhttp.responseText;
+                        }
+                    };
+                    var uri = encodeURIComponent(str);
+                    var uri1 = encodeURIComponent(inp);
+                    var uri2 = encodeURIComponent(prglan);
+                    var uri3 = encodeURIComponent(filename);
+                    xmlhttp.open("GET", "compile_nd_run?code=" + uri + "&inputs=" + uri1 + "&prglan=" + uri2 + "&filename=" + uri3, true);
+                    xmlhttp.send();
+                }
+            }
+            //For Displaying Line Number in Editor
+            $(function () {
+                $(".lined").linedtextarea(
+                        {selectedLine: 1}
+                );
+            });
+            //For Tab In Editor
+            $("textarea").keydown(function (e) {
+                if (e.keyCode === 9) {
+                    var start = this.selectionStart;
+                    var end = this.selectionEnd;
+                    var $this = $(this);
+                    var value = $this.val();
+                    $this.val(value.substring(0, start)
+                            + "\t"
+                            + value.substring(end));
+                    this.selectionStart = this.selectionEnd = start + 1;
+                    e.preventDefault();
+                }
+            });
+        </script>
+        <script>
+            function changelan(){
+                
+                var opt = document.getElementById("prglan").value;
+                if (opt==='c')
+                {
+                    document.getElementById("t1").innerHTML = "#include<stdio.h>"+"\n"
+                    +"int main()"+"\n"
+                    +"{"+"\n"
+                    +"\t printf(\"C Language: Hello World....!\");"+"\n"
+                    +"\t return 0;"+"\n"
+                    +"}"+"\n";
+                }
+                else if (opt==='java')
+                {
+                    //alert();
+                    var filename = document.getElementById("filename").value;
+                    document.getElementById("t1").innerHTML = "public class " + filename+"\n"
+                            + "{"+"\n"
+                            + "\tpublic static void main(String args[])"+"\n"
+                            + "\t{"+"\n"
+                            +"\t\tSystem.out.println(\"Java Language: Hello World...!\");"+"\n"
+                            +"\t}"+"\n"
+                            + "}"+"\n";
+                }
+                else if(opt==='cpp')
+                {
+                    document.getElementById("t1").innerHTML = "#include<iostream>"+"\n"
+                    +"using namespace std;"+"\n"
+                    +"int main()"+"\n"
+                    +"{"+"\n"
+                    +"\t cout<<\"C++ Language: Hello World....!\";"+"\n"
+                    +"\t return 0;"+"\n"
+                    +"}"+"\n";
+                }
+                else
+                {
+                    
+                }
+               
+            };
+        </script>
+    </body>
+</html>

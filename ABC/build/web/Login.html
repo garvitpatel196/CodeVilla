@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>IDE-HOME</title>
+        <link rel="stylesheet" href="Login_style.css"> 
+        <link rel="stylesheet" href="Header.css">
+ 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function sess() {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                        var x = parseInt(xmlhttp.responseText);
+                        if (x === 1)
+                        {
+                            
+                        }
+                        else
+                        {
+                            window.location.replace("http://localhost:8080/ABC/Editor.html");
+                        }
+
+                    }
+                };
+                xmlhttp.open("GET", "sess?", true);
+                xmlhttp.send();
+            }
+            
+        </script>
+    </head>
+    <body onload="sess()">
+        <div>
+            <div style="position:fixed; z-index:99999; width:100%;alignment-adjust: central;">
+                <ul style="clear:left; float:right;">
+
+                    <li><a href="Signup.html">Sign Up</a></li>
+                    <li><a class="active" href="#Login">Login</a></li>
+                    <li><a href="Home.html">Home</a></li>
+                </ul>
+            </div>
+            <div class="login-page">
+                <div class="form" >
+                    <form name="loginform" method="get" >
+                        <input type="text" placeholder="Username" name="user" id="t1"  required/>
+                        <input type="password" placeholder="Password" name="pass" id="t2" required/>
+                        <button type="button" onClick="loaddoc()">login</button>
+                        <p class="message">Not registered? <a href="Signup.html">Create an account</a></p>
+                        <div class="message" style="text-align: center!important;" id="demo"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script>
+            function loaddoc() {
+                var str = document.getElementById("t1").value;
+                var inp = document.getElementById("t2").value;
+                
+                if (str.length === 0||inp.length===0) {
+                    alert("Please enter your login details");
+                    return;
+                } else {
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function () {
+                        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                            var x=parseInt(xmlhttp.responseText);
+                            if(x===1)
+                            {
+                                document.getElementById("demo").innerHTML = "Invalid UserName or Password";
+                            }
+                            else
+                            {
+                                window.location.replace("http://localhost:8080/ABC/Editor.html");
+                            }
+                            
+                        }
+                    };
+                    var uri = encodeURIComponent(str);
+                    var uri1 = encodeURIComponent(inp);
+                    xmlhttp.open("GET", "Login?user=" + uri + "&pass=" + uri1, true);
+                    xmlhttp.send();
+                }
+            }
+        </script>
+    </body>
+</html>

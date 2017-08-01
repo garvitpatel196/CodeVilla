@@ -1,0 +1,47 @@
+    <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>IDE-Events</title>
+        <link rel="stylesheet" href="Login_style.css"> 
+        <link rel="stylesheet" href="Header.css"> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function sess() {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                        var x = parseInt(xmlhttp.responseText);
+                        if (x === 1)
+                        {
+                            window.location.replace("http://localhost:8080/ABC/Login.html");
+                        }
+                        else
+                        {
+                            document.getElementById("welcome").innerHTML = "Welcome " + xmlhttp.responseText+"...!";
+                        }
+
+                    }
+                };
+                xmlhttp.open("GET", "sess?", true);
+                xmlhttp.send();
+            }
+        </script>
+    </head>
+    <body onload="sess()">
+        <div style="position:fixed; z-index:99999;alignment-adjust: central;  width:100%;">
+            <ul style="clear:left;float:right;">
+                <li id="welcome" class="welcome"></li>
+                <li><a href="Logout">Logout</a></li>
+                <li><a href="Profile.jsp">My Profile</a></li>
+                <li><a  href="Editor.html">Editor</a></li>
+                <li><a class="active" href="#evnts">Events</a></li>
+            </ul>
+        </div>
+    </body>
+</html>

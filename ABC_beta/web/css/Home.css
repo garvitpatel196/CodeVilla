@@ -1,0 +1,361 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 24, 2016, 6:41:15 PM
+    Author     : Garvit Patel
+*/
+html::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+html::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+html::-webkit-scrollbar-corner {
+    background-color:rgba(39, 128, 227, 0.5);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background-color:rgb(39, 128, 227);
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.25);
+}
+html::-webkit-scrollbar-thumb {
+    background-color: rgba(39, 128, 227, 0.5);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,0.10),inset 0 -1px 0 rgba(0,0,0,0.07);
+}
+.overlay::-webkit-scrollbar {
+    width: 12px;
+    height: 16px;
+}
+.overlay::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.overlay::-webkit-scrollbar-corner {
+    background-color:rgb(147, 192, 241);
+}
+
+.overlay::-webkit-scrollbar-thumb:hover {
+    background-color:rgb(39, 128, 227);
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.25);
+}
+.overlay::-webkit-scrollbar-thumb {
+    background-color: rgb(147, 192, 241);
+    -webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,0.10),inset 0 -1px 0 rgba(0,0,0,0.07);
+}
+.contact button:hover{
+    color: black;
+    background-color:rgba(39, 128, 227, 0.5);
+    border: 1px solid #2780e3;
+}
+.contact
+{
+    font-family: myFirstFont;
+    margin: 0px;
+    padding-left:5%!important;
+    padding-right:5%!important;
+    padding-bottom: 5%;
+    width:100%;
+    height:fit-content;
+    color:#2780e3;
+    position: static;
+}
+.aboutus{
+    font-family: myFirstFont;
+    background-color: rgba(119, 119, 119, 0.25);
+    height: fit-content;
+    margin: 0px;
+    padding-left: 5%!important;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    color: #2780e3;
+    padding-right: 5%!important;
+    width: 100%!important;
+    position: static;
+}
+@font-face {
+    font-family: myFirstFont;
+    src: url(SansationLight.woff);
+}
+.heading{
+    font-family: myFirstFont!important;
+}
+.body{
+    font-family: myFirstFont!important;
+    overflow-y: hidden;
+}
+.bodyhome
+{
+    background-image: url("../images/BACKHOME.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 710px;
+}
+.login{
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    float: right;
+    padding-right: 15px;
+    color: white;
+    padding: 12px 16px;
+    border: 1px solid white;
+    margin-right: 18px;
+    margin-top: 15px;
+    font-family: myFirstFont!important;
+}
+.login:hover{
+    color: black;
+    background-color: #2780e3;
+    border: 1px solid #2780e3;
+}
+.login:active{
+    color: black;
+    background-color: #2780e3;
+    border: 1px solid #2780e3;
+}
+
+.overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.8);
+    overflow-y: auto;
+    transition: 0.5s;
+}
+@media screen and (max-width: 47.2em){
+    
+    .bodyhome
+    {
+        background-repeat: no-repeat;
+        background-attachment: fixed!important;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: auto;
+        background-position-x: -325px;
+        height: 710px;
+    }
+    .cmpyname{
+        font-size: 35px!important;
+    }
+}
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    text-decoration: none;
+    color: black;
+}
+
+.overlay .closebtn {
+    position: relative;
+    font-size: 35px;
+    width: fit-content;
+    height: fit-content;
+    float:right;
+    clear: left;
+    font-size: 20px;
+    padding: 12px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay {overflow-y: auto;}
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 20px;
+        position: relative;
+        font-size: 35px;
+        width: fit-content;
+        height: fit-content;
+        float:right;
+        clear: both;
+        z-index: 1;
+        font-size: 20px;
+        padding: 12px;
+    }
+}
+.login-page {
+    width: 45%;
+    padding: 8% 0 0;
+    margin: auto;
+    padding-top: 0px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    position: relative;
+    padding-bottom: 45px;
+    z-index: 1;
+    background: #FFFFFF;
+    overflow-y: auto;
+    overflow-x: auto;
+    margin-bottom: 50px;
+
+}
+
+.form {
+    padding-right: 0px !important;
+    margin-top: 45px;
+    position: relative;
+    max-width:100%;
+    width: 85%;
+    padding: 0px;
+    text-align: center;
+
+}
+.form input {
+    font-family: myFirstFont!important;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.form input:focus{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input:hover{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form button {
+    font-family: myFirstFont!important;
+    text-transform: uppercase;
+    outline: 0;
+    background: black;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color:#FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+.form button:hover {
+    color: white;
+    background-color:#2780e3;
+}
+.form button:active{
+    color: white;
+    background-color: #2780e3;
+}
+
+.form .message {
+    color: red;
+    text-align: left!important;
+    font-size: 15px;
+
+}
+.logo{
+    font-family: myFirstFont!important;
+    width: 100%;
+    height: fit-content;
+    margin-top: 10px;
+    color:#2780e3!important;
+}
+.logo .cmpyname{
+    float:left;
+    font-size: 40px;
+    margin-top: 13px;
+    margin-left: 10px;
+    color: white;
+    clear: right;
+}
+.logo .login{
+    float:right!important;
+}
+.form .message a {
+    color: blue;
+    text-decoration: none;
+}
+.slideanim {visibility:hidden;}
+.slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    visibility: visible;
+}
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateX(70%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(70%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0%);
+    }
+}
+.edi{
+    margin-top:20px;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-bottom: 70px;
+}
+.editor select{
+    width:20%;
+    height:35px;
+    float:left;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+@media screen and (max-width: 47.2em){
+    .login-page{
+        width: 100%;
+    }
+    .edi{
+        margin-left: 10px!important;
+        margin-right: 40px!important;
+    }
+    .btn-info{
+        width: 100%;
+    }
+    .editor select{
+        width:100%;
+        margin-left: 0px;
+    }
+    .editor{
+        height: 895px;
+    }
+    .overlaycont{
+        margin-top: 35.5%!important;
+    }
+}

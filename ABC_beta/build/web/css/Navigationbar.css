@@ -1,0 +1,48 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 2, 2016, 3:31:58 PM
+    Author     : Garvit Patel
+*/
+@font-face {
+    font-family: myFirstFont;
+    src: url(SansationLight.woff);
+}
+.navbar{
+    font-family: myFirstFont;
+    font-size: 18px!important;
+    background-color: #000000!important;
+    border: 0;
+    overflow: auto;
+    margin-top: 0px;
+}
+.navi a{
+    color:white!important;
+}
+.navi a:hover{
+    background-color:#2780e3!important;
+    color:white!important;
+}
+.activeself a{
+    background-color:#2780e3!important; 
+    margin-right: 1px!important;
+    margin-left: 1px!important;
+    color: white!important;
+}
+.activeself a:hover{
+    background-color:#2780e3!important; 
+    color: white!important;
+
+}
+@media screen and (max-width: 47.2em){
+    .activeself a{
+        margin-right: 0px!important;
+        margin-left: 0px!important;
+    }
+    .navbar{
+        opacity: 0.8;
+    }
+}

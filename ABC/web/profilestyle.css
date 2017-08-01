@@ -1,0 +1,235 @@
+@font-face {
+   font-family: myFirstFont;
+   src: url(fonts/SansationLight.woff);
+   font-weight: bold;
+}
+
+body {
+   font-family: myFirstFont!important;
+}
+.prof{
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    background: #FFFFFF;
+    margin-top: 25px;
+    margin-left: 90px;
+    margin-right: 50px;
+    padding: 5px;
+    width: 86%;
+    padding-bottom:22px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.prof input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.prof button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #000000;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color:#FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+.prof button:focus {
+    color: #2780e3!important;
+}
+.prof button:hover {
+    color: #2780e3!important;
+}
+.prof button:active{
+    color: #2780e3!important;
+}
+
+.prof .message {
+    margin:5px 5px 5px 5px;   
+    color: red;
+    text-align: left!important;
+    font-size: 15px;
+
+}
+.prof .message a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+.prof .register-form {
+    display: none;
+}
+.panel-heading{
+    color: #005c81;
+    font-size: 23px;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-right: 15px; 
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: 1px solid;
+}
+.panel{
+    color: #2780e3;
+    font-size: 18px;
+    padding-left: 15px;
+    padding-right: 15px; 
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-right: 25px;
+    border-bottom: 1px solid;
+}
+.wrap-plus {
+    border: 2px dashed #6da2b6;
+    margin-right: 15px;
+    float: left;
+    max-width: -moz-fit-content;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 0px;
+}
+.add
+{
+    margin-top: 8px;
+    color: black;
+    padding-bottom: 23px;
+    height: -moz-max-content;
+    width: 25%;
+    text-decoration: underline;
+    clear: left;
+    
+}
+.add:hover{
+    color: #2780e3;
+    cursor: pointer;
+}
+.detail{
+    padding: 5px;
+    margin-right: 50px;
+}
+.detail input{
+    font-family: myFirstFont!important;
+    outline: 0;
+    background: #f2f2f2;
+    width: 350px;
+    border: 0;
+    padding: 10px !important;
+    margin-bottom: 5px !important;
+    box-sizing: border-box;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.edit button{
+    color: black!important;
+    background:none!important;
+    width: auto!important;
+    padding: 3px!important;
+    text-decoration: underline!important;
+    font-weight: bold!important;
+}
+.save button
+{
+    font-family: "Roboto", sans-serif;
+    text-transform: capitalize;
+    outline: 0;
+    background: #000000;
+    width: inherit!important;
+    border: 0;
+    margin-left: 16px;
+    padding: 15px;
+    color:#FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+.save button:hover {
+    background: #2780e3!important;
+    color: white!important;
+}
+.save button:focus {
+    background: #2780e3!important;
+    color: white!important;
+}
+.save button:active{
+    background:#2780e3 !important;
+    color: white!important;
+}
+.addprof input{
+    font-family: myFirstFont!important;
+    outline: 0;
+    background: #f2f2f2;
+    width:inherit;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 7px;
+    box-sizing: border-box;
+    float:left;
+    font-size: 14px;
+}
+.addprof button {
+    font-family: myFirstFont!important;
+    text-transform: uppercase;
+    outline: 0;
+    background: #000000;
+    width:inherit;
+    border: 0;
+    padding: 7px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+.addprof button:hover {
+    color: white!important;
+    background-color: #2780e3;
+}
+.addprof button:focus {
+    color: white!important;
+    background-color: #2780e3;
+}
+.addprof button:active {
+    color: white!important;
+    background-color: #2780e3;
+}
+.addprof li{
+    font-family: myFirstFont!important;
+    text-transform: uppercase;
+    float: left;
+    text-decoration: none;
+    background: #f2f2f2;
+    color: #2780e3;
+    padding: 5px;
+    border: 1px solid;
+    margin-right: 15px;
+    cursor: context-menu;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.addprof ul{
+    background: white;
+    color: #2780e3;
+    border: none;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-left: 3px;
+    outline: 0;
+    border: 0;
+}
+.addprof select{
+    width: 17%;
+    font-size: 17px;
+    padding: 3px;
+    background: #f2f2f2;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #2780e3;
+    border: aliceblue;
+    -moz-appearance:button;
+}

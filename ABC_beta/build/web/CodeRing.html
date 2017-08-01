@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title id="ename">CodeRing</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/Navigationbar.css">
+        <link rel="stylesheet" href="css/Profile.css">
+        <link rel="stylesheet" href="css/Editor.css">
+        <link rel="stylesheet" href="css/Home.css">
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+        <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+        <script src="js/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <script src="Lined_Plugins/jquery-linedtextarea.js"></script>
+        <link href="Lined_Plugins/jquery-linedtextarea.css" type="text/css" rel="stylesheet" />
+        <script>
+            $(document).ready(function () {
+                $("#show1").hide();
+                changelan();
+            });
+            function sess() {
+                $('.alert').fadeOut();
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                        var x = parseInt(xmlhttp.responseText);
+                        if (x === 1)
+                        {
+                            window.location.replace("http://localhost:8080/ABC_beta/Logout");
+                        }
+                        else
+                        {
+                        }
+
+                    }
+                };
+                xmlhttp.open("GET", "sess?", true);
+                xmlhttp.send();
+            }
+        </script>
+    </head>
+    <body onload="sess()">
+        <a id="myPage" ></a>
+        <div class="container-fluid" style="padding-top:70px;overflow-x: hidden;padding-left: 0px;padding-right: 0px;">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-default navbar-fixed-top" style="border-color: rgba(231, 231, 231, 0.45)!important;">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>                        
+                                </button>
+
+                                <a class="navbar-brand" style="padding: 0px" href="AboutUs.html">
+                                    <img alt="Company Logo" src="images/cv_logo.png" style="margin-left: 20px;margin-top: 5px;height: 40px;width: 40px;float: left;">
+                                    <span class="cmpyname" style="margin-left: 5px;color: white;font-size: 30px;line-height: 47px;">CodeVilla</span>
+                                </a>
+                            </div>
+                            <div class="collapse navbar-collapse" id="myNavbar">
+                                <ul class="nav navbar-nav navbar-right navi">
+                                    <li ><a href="MainEvent.jsp">EVENTS</a></li>
+                                    <li ><a href="MainEditor.html">EDITOR</a></li>
+                                    <li class="active activeself"><a href="Profile.jsp">PROFILE</a></li>
+                                    <li><a href="Logout">LOGOUT</a></li> 
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="row edi" style="margin-bottom: 25px" >
+
+                <div style="margin-left: 12%;margin-right: 10%;width:85%">
+
+                    <div class="row" style="clear: left">
+
+                        <div class="col-sm-11 editor">
+                            <div class="pan-head">
+                                <div id="ques_name">
+                                    
+                                </div>
+
+                                <div style="font-size:12px">
+                                    Level : Medium
+                                    || Maximum Score : 20
+                                </div>
+                            </div>
+                            <div class="pan-body" style="color:black!important">
+                                <div>
+                                    <div class="row" style="font-weight: bold;color:black!important">
+                                        Description
+                                    </div>
+
+                                    <div id="ques_desc" class="row" style="color:black!important">
+                                    </div>
+
+                                    <div class="row" style="font-weight: bold;color:black!important">
+                                        Input:
+                                    </div>
+
+                                    <div class="row" style="color:black!important">
+                                        First line of input contains number of test case T. Each test case contains a single integer N.
+                                    </div>
+                                    <div class="row" style="font-weight: bold;color:black!important">
+                                        Output:
+                                    </div>
+
+                                    <div class="row" style="color:black!important">
+                                        For each test case print the factorial of a number.
+                                    </div>
+                                    <div class="row" style="font-weight: bold;color:black!important">
+                                        Constraints:
+                                    </div>
+
+                                    <div class="row" style="color:black!important">
+                                        1<=T<=10000<br>
+                                        1<=N<=105
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="overflow-x: hidden;padding-left: 0px;padding-right: 0px;">
+            <div class="row edi">
+
+                <form name="vinform" method="GET" style="float:right;width: 90%;">
+
+                    <div class="row" style="clear: left;margin-left: 0.5%;margin-right: -8%;">
+
+                        <div class="col-sm-10 editor">
+                            <div>
+                                <h4>Write your code here</h4>
+                                <textarea class="lined" rows="25" name="code" placeholder="Editor" style="font-size: 17px;" id="t1"></textarea>
+                            </div>
+                            <div id="demo" class="collapsing">
+                                <div  style="margin-top: 5px">
+                                    <h4>Standard Inputs</h4>
+                                    <textarea class="lined" rows="5" name="inputs" placeholder="Inputs" style="font-size: 17px;" id="t2" ></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" id="stdin" style="margin-top:5px;float: left">Standard Inputs</button>
+                                <select id="prglan" class="form-control" onchange="changelan()" style="">
+                                    <option value="c">C (GNU gcc-4.7.1)</option>
+                                    <option value="cpp">C++ (GNU gcc-4.7.1)</option>
+                                    <option value="java">Java (JDK-7)</option>
+                                </select>
+                                <button class="btn btn-info" style="float: right;margin-top: 5px" type="button"  id="show" onClick="loaddoc();
+                                        openNavLogin()">Compile and Run</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="footer" class="container aboutus" >
+                <center>
+                    <a  href="#myPage" data-toggle="tooltip" id="toTop" title="" data-original-title="TO TOP">
+                        <span class="glyphicon glyphicon-chevron-up"></span>
+                    </a>
+                    <footer>
+                        <div>
+                            <div class="text-center" style="cursor:pointer">
+                                <p style="font-size: 14px; margin-top: 5px; margin-bottom: 0px;"><span >
+                                        <a target="_blank" >
+                                            Contest Calendar
+                                        </a> | 
+                                        <a target="_blank">
+                                            Blog
+                                        </a> |
+                                        <a target="_blank">
+                                            Scoring
+                                        </a> | 
+                                        <a target="_blank" >
+                                            Environment
+                                        </a> | 
+                                        <a target="_blank" >
+                                            FAQ
+                                        </a> |
+                                    </span> 
+                                    <a target="_blank">
+                                        About Us
+                                    </a> | 
+                                    <a target="_blank">
+                                        Support
+                                    </a> | 
+                                    <a target="_blank">
+                                        Careers
+                                    </a> |
+                                    <a target="_blank">
+                                        Terms Of Service
+                                    </a> | 
+                                    <a target="_blank">
+                                        Privacy Policy
+                                    </a> | 
+                                    <a target="_blank">
+                                        Request a Feature
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </footer>
+                </center>
+            </div>
+            <div id="myNavlogin" class="overlay">
+                <center>
+
+                    <div style="width:90%;" >
+                        <h1 class="overlaycont" style="margin-top: 10%;color:white;font-family: myFirstFont;">OUTPUT</h1>
+                        <i class="fa fa-circle-o-notch fa-spin" id="spinner" style="padding: 10px;font-size:48px;color:white;"></i>
+                        <div class="login-page" id="out"> 
+                            <div>
+                                <a href="javascript:void(0)" class="closebtn" onclick="closeNavlogin()">&#10005;</a>
+                            </div>
+
+                            <div class="form" >
+                                <table class="table" style="text-align: left">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 35%;">TEST CASE</th>
+                                            <th style="width: 30%;">STATUS</th>
+                                            <th>EXECUTION TIME</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Test Case-1</td>
+                                            <td id="ans">Failed</td>
+                                            <td>0.01s</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </div>
+        <script>
+            function openNavLogin() {
+                document.getElementById("myNavlogin").style.height = "100%";
+                document.getElementById("myNavlogin").style.width = "100%";
+            }
+            function openNavSignup() {
+                document.getElementById("myNavsignup").style.height = "100%";
+                document.getElementById("myNavsignup").style.width = "100%";
+            }
+            function closeNavsignup() {
+                document.getElementById("myNavsignup").style.height = "0%";
+
+            }
+            function closeNavlogin() {
+                document.getElementById("myNavlogin").style.height = "0%";
+
+            }
+            //For Handling compile and Run Eevent
+            function loaddoc() {
+                $("#out").hide();
+                $("#spinner").show();
+                //for showing loading animation in output division  
+                var prglan = document.getElementById("prglan").value;
+                var str = document.getElementById("t1").value;
+                var inp = document.getElementById("t2").value;
+                var filename = document.getElementById("ename").value;
+                if (str.length === 0) {
+
+                    return;
+                } else {
+                    //for displaying output 
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function () {
+                        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                            $("#spinner").hide();
+                            $("#out").show();
+                            document.getElementById("ans").innerHTML=this.responseText;;
+                        }
+                    };
+                    var uri = encodeURIComponent(str);
+                    var uri1 = encodeURIComponent(inp);
+                    var uri2 = encodeURIComponent(prglan);
+                    var uri3 = encodeURIComponent(filename);
+                    xmlhttp.open("GET", "compile_nd_run?code=" + uri + "&inputs=" + uri1 + "&prglan=" + uri2 + "&filename=" + uri3, true);
+                    xmlhttp.send();
+                }
+            }
+            //For Displaying Line Number in Editor
+            $(function () {
+                $(".lined").linedtextarea(
+                        {selectedLine: 1}
+                );
+            });
+            //For Tab In Editor
+
+            $("textarea").keydown(function (e) {
+                if (e.keyCode === 9) {
+                    var start = this.selectionStart;
+                    var end = this.selectionEnd;
+                    var $this = $(this);
+                    var value = $this.val();
+                    $this.val(value.substring(0, start)
+                            + "\t"
+                            + value.substring(end));
+                    this.selectionStart = this.selectionEnd = start + 1;
+                    e.preventDefault();
+                }
+                else if (e.ctrlKey && e.which === 83)
+                {
+                    e.preventDefault();
+                    return false;
+                }
+                else if (e.shiftKey && e.which === 222) {
+                    var start = this.selectionStart;
+                    var end = this.selectionEnd;
+                    var $this = $(this);
+                    var value = $this.val();
+                    $this.val(value.substring(0, start)
+                            + "\"\""
+                            + value.substring(end));
+                    this.selectionStart = this.selectionEnd = start + 1;
+
+                    e.preventDefault();
+                }
+                else if (e.shiftKey && e.which === 57)
+                {
+                    var start = this.selectionStart;
+
+                    var end = this.selectionEnd;
+
+                    var $this = $(this);
+                    var value = $this.val();
+                    $this.val(value.substring(0, start)
+                            + "()"
+                            + value.substring(end));
+                    this.selectionStart = this.selectionEnd = start + 1;
+
+                    e.preventDefault();
+                }
+                else if (e.shiftKey && e.which === 29)
+                {
+                    var start = this.selectionStart;
+
+                    var end = this.selectionEnd;
+
+                    var $this = $(this);
+                    var value = $this.val();
+                    $this.val(value.substring(0, start)
+                            + "\"\""
+                            + value.substring(end));
+                    this.selectionStart = this.selectionEnd = start + 2;
+
+                    e.preventDefault();
+                }
+                else if (e.shiftKey && e.which === 219)
+                {
+                    var start = this.selectionStart;
+                    var end = this.selectionEnd;
+                    var $this = $(this);
+                    var value = $this.val();
+                    $this.val(value.substring(0, start)
+                            + "{}"
+                            + value.substring(end));
+                    this.selectionStart = this.selectionEnd = start + 1;
+
+                    e.preventDefault();
+                }
+            });
+        </script>
+        <script>
+            function changelan() {
+
+                var opt = document.getElementById("prglan").value;
+                if (opt === 'c')
+                {
+                    document.getElementById("t1").value = "#include<stdio.h>" + "\n"
+                            + "int main()" + "\n"
+                            + "{" + "\n"
+                            + "\tprintf(\"C Language: Hello World....!\");" + "\n"
+                            + "\treturn 0;" + "\n"
+                            + "}" + "\n";
+                }
+                else if (opt === 'java')
+                {
+                    document.getElementById("t1").value = "public class " + "DEMO" + "\n"
+                            + "{" + "\n"
+                            + "\tpublic static void main(String args[])" + "\n"
+                            + "\t{" + "\n"
+                            + "\t\tSystem.out.println(\"Java Language: Hello World...!\");" + "\n"
+                            + "\t}" + "\n"
+                            + "}" + "\n";
+                }
+                else if (opt === 'cpp')
+                {
+                    document.getElementById("t1").value = "#include<iostream>" + "\n"
+                            + "using namespace std;" + "\n"
+                            + "int main()" + "\n"
+                            + "{" + "\n"
+                            + "\tcout<<\"C++ Language: Hello World....!\";" + "\n"
+                            + "\treturn 0;" + "\n"
+                            + "}" + "\n";
+                }
+                else
+                {
+
+                }
+            }
+            $(document).ready(function () {
+                $("#toTop").on("click", function (event) {
+
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+                        window.location.hash = hash;
+                    });
+
+                });
+                $(window).scroll(function () {
+                    $(".slideanim").each(function () {
+
+                        var pos = $(this).offset().top;
+                        alert();
+                        var winTop = $(window).scrollTop();
+
+                        if (pos < winTop + 600) {
+                            $(this).addClass("slide");
+                        }
+                    });
+                });
+            });
+        </script>
+    <script>
+        document.getElementById('ques_name').innerHTML='Factorial';
+        document.getElementById('ques_desc').innerHTML='In mathematics, the factorial of a non-negative integer n, is the product of all positive integers less than or equal to n.Find The factorial of given Number';
+    </script>
+    </body>
+</html>

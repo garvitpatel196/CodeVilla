@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+    <head>
+        <title>Home | Company</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/Home.css">
+        <link rel="stylesheet" href="css/bounce.css">
+        <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <script>
+            function sess() {
+                $('.alert').fadeOut();
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                        var x = parseInt(xmlhttp.responseText);
+                        if (x === 1)
+                        {
+
+                        }
+                        else
+                        {
+                            window.location.replace("http://localhost:8080/ABC_beta/MainEditor.html");
+                        }
+
+                    }
+                };
+                xmlhttp.open("GET", "sess?", true);
+                xmlhttp.send();
+            }
+        </script>
+    </head>
+    <body  onload="sess()">
+        <a id="myPage" ></a>
+        <div class="container" style="padding: 0px;width:100%;overflow-x: hidden">
+            <div class="row bodyhome">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-default" style="position: static;background-color: transparent;border-color: transparent;">
+                        <div class="container-fluid">
+                            <div class="navbar-header" style="height: 70px;">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="margin-top: 4%;">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>                        
+                                </button>
+
+                                <a class="navbar-brand" style="padding: 0px" href="AboutUs.html">
+                                    <img alt="Company Logo" src="images/cv_logo.png" style="margin-left: 20px;margin-top: 5px;height: 55px;width: 55px;float: left;">
+                                    <span class="cmpyname" style="margin-left: 11px;color: white;font-size: 50px;line-height: 65px;">CodeVilla</span>
+                                </a>
+                            </div>
+                            <div class="collapse navbar-collapse" id="myNavbar">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a class="active" href="#" onclick="openNavLogin()" style="color: #fff;">LOGIN</a></li>
+                                    <li><a href="#" onclick="openNavSignup()" style="color: #fff;">SIGN UP</a></li>
+                                    <li><a href="#" style="color: #fff;">ABOUT US</a></li>
+                                    <li><a href="#" style="color: #fff;"><span class="glyphicon glyphicon-search"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="jumbotron text-center heading" style="background-color: transparent;color:white;cursor: context-menu">
+                        <center><h1>A Place To Code</h1></center>
+                        <center><h3>Let Your code make your identity.</h3></center>
+                        <center><h3>Code here and get hired.</h3></center>
+                    </div>   
+                </div>
+            </div>
+            <!--            <div class="bodyhome" >
+                            <div class="navbar-header logo" style="position: static" >
+                                <a id="myPage" ></a>
+                                <a class="navbar-brand clearfix" href=""  style="height: 80px;">
+                                    <img alt="Company Logo" src="images/cv_logo.png" style="height: 50px;width: 50px;float: left;">
+                                    <span class="cmpyname">CodeVilla</span>
+                                </a>
+                                <button class="login" onclick="openNavSignup()" style="margin-right: 35px;background-color: transparent;">Sign Up</button>
+                                <button class="login" onclick="openNavLogin()" style="background-color: transparent;">Login</button>
+                            </div>
+                            <div class="jumbotron text-center heading" style="background-color: transparent;color:white;cursor: context-menu">
+                                <center><h1>A Place To Code</h1></center>
+                                <center><h3>Let Your code make your identity.</h3></center>
+                                <center><h3>Code here and get hired.</h3></center>
+                            </div>   
+                        </div>-->
+            <div id="contact" class="container contact" >
+                <h3 class="text-center">Contact</h3>
+                <p class="text-center"><em>We love our fans!</em></p>
+
+                <div class="row" style="padding-top: 5%">
+                    <div class="col-md-4">
+                        <p>Fan? Drop a note.</p>
+                        <p><span class="glyphicon glyphicon-map-marker"></span> CSPIT B.Tech I.T. building,<br>  Changa-388421,Anand Dist.,<br>  Gujarat, India.</p>
+                        <p><span class="glyphicon glyphicon-phone"></span> Phone: +91 9427498587</p>
+                        <p><span class="glyphicon glyphicon-phone"></span> Phone: +91 8866377576</p>
+                        <p><span class="glyphicon glyphicon-envelope"></span> Email: support@codevilla.xyz</p>
+                    </div>
+                    <div class="col-md-8 slideanim slide">
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <input class="form-control" id="name" name="name" placeholder="Name" type="text" required="">
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <input class="form-control" id="email" name="email" placeholder="Email" type="email" required="">
+                            </div>
+                        </div>
+                        <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <button class="btn pull-right" type="submit">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer" class="container aboutus" >
+                <center>
+                    <a  href="#myPage" data-toggle="tooltip" id="toTop" title="" data-original-title="TO TOP">
+                        <span class="glyphicon glyphicon-chevron-up"></span>
+                    </a>
+                    <footer>
+                        <div>
+                            <div class="text-center" style="cursor:pointer">
+                                <p style="font-size: 14px; margin-top: 5px; margin-bottom: 0px;"><span >
+                                        <a target="_blank" >
+                                            Contest Calendar
+                                        </a> | 
+                                        <a target="_blank">
+                                            Blog
+                                        </a> |
+                                        <a target="_blank">
+                                            Scoring
+                                        </a> | 
+                                        <a target="_blank" >
+                                            Environment
+                                        </a> | 
+                                        <a target="_blank" >
+                                            FAQ
+                                        </a> |
+                                    </span> 
+                                    <a target="_blank">
+                                        About Us
+                                    </a> | 
+                                    <a target="_blank">
+                                        Support
+                                    </a> | 
+                                    <a target="_blank">
+                                        Careers
+                                    </a> |
+                                    <a target="_blank">
+                                        Terms Of Service
+                                    </a> | 
+                                    <a target="_blank">
+                                        Privacy Policy
+                                    </a> | 
+                                    <a target="_blank">
+                                        Request a Feature
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </footer>
+                </center>
+
+            </div>
+            <div id="myNavlogin" class="overlay">
+                <center>
+                    <div style="width:90%;">
+                        <h1 style="margin-top:7.5%;color:white;font-family: myFirstFont;">Login</h1>
+                        <div class="login-page" id="loginpage"> 
+                            <div>
+                                <a href="javascript:void(0)" class="closebtn" onclick="closeNavlogin()">&#10005;</a>
+                            </div>
+                            <div class="form" >
+                                <form name="loginform" method="get" >
+                                    <input type="text" placeholder="Username" name="user" id="t1"  required/>
+                                    <input type="password" placeholder="Password" name="pass" id="t2" required/>
+                                    <button type="button" id='login' onClick="loaddoc()">login</button>
+                                    <div style="margin-top: 5px">
+                                        <span>Do not have an account ? |
+                                            <a href="#" onclick="openNavSignup();
+                                                    closeNavlogin()" style="font-size: 15px;display: -webkit-inline-box;text-decoration: underline;padding-left: 0px;padding-right: 0px;color:#2780e3 ">Create an account </a> |
+                                            <a href="ForgotPass.html" style="font-size: 15px;display: -webkit-inline-box;text-decoration: underline;padding-left: 0px;padding-right: 0px;color:#2780e3">Forgot Password</a></span>
+                                    </div>
+                                    <div class="alert alert-warning" style="margin-top: 10px;padding: 10px">
+                                        <div class="message" style="text-align: center!important;" id="demo"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </center>
+            </div>
+            <div id="myNavsignup" class="overlay">
+                <center>
+                    <div style="width:90%;">
+                        <h1 style="margin-top:6.5%;color:white;font-family: myFirstFont;">Sign Up</h1>
+                        <div class="login-page">
+                            <div>
+                                <a href="javascript:void(0)" class="closebtn" onclick="closeNavsignup()">&#10005;</a>
+                            </div>
+                            <div class="form" >
+                                <form name="signupform" method="get" >
+                                    <input type="text" name="fname" placeholder="First Name" id="t11" required/><br />
+                                    <input type="text" name="lname" placeholder="Last Name" id="t22" required/><br />
+                                    <input type="email" name="user" placeholder="Email" id="t3" style="margin-bottom: 5px!important;" required/><br />
+                                    <div class="message" id="demo2"></div>
+                                    <input type="password" name="pass" placeholder="Password" id="t4"  style="margin-top: 5px!important;"  required/><br />
+                                    <input type="text" name="phno" placeholder="Phone Number" id="t5" required/><br />
+                                    <input type="text" name="add" placeholder="Address" id="t6" required><br/>
+                                    <button type="button" onclick="loaddoc1()" id="signup">Sign UP</button>
+
+                                    <div class="alert alert-warning" style="margin-top: 10px;padding: 10px">
+                                        <div class="message" style="text-align: center!important;" id="demo1"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </center>
+            </div>
+
+        </div>
+
+        <script>
+            function loaddoc() {
+                var str = document.getElementById("t1").value;
+                var inp = document.getElementById("t2").value;
+                if (str.length === 0 && inp.length === 0)
+                {
+                    $('.alert').fadeIn();
+                    $('.alert').delay(2000).fadeOut();
+                    document.getElementById("demo").innerHTML = "Please Enter Username and Password.";
+                    return;
+                }
+                else if (str.length === 0) {
+                    $('.alert').fadeIn();
+                    $('.alert').delay(2000).fadeOut();
+                    document.getElementById("demo").innerHTML = "Please Enter Username.";
+                    return;
+                }
+                else if (inp.length === 0) {
+                    $('.alert').fadeIn();
+                    $('.alert').delay(2000).fadeOut();
+                    document.getElementById("demo").innerHTML = "Please Enter Password.";
+                    return;
+                }
+                else {
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function () {
+                        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                            var x = parseInt(xmlhttp.responseText);
+                            if (x === 1)
+                            {
+                                $('.alert').fadeIn();
+                                $('.alert').delay(1000).fadeOut();
+                                document.getElementById("demo").innerHTML = "Invalid UserName or Password";
+                            }
+                            else
+                            {
+                                window.location.replace("http://localhost:8080/ABC_beta/MainEditor.html");
+                            }
+
+                        }
+                    };
+                    var uri = encodeURIComponent(str);
+                    var uri1 = encodeURIComponent(inp);
+                    xmlhttp.open("POST", "Login", true);
+                    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xmlhttp.send("user=" + uri + "&pass=" + uri1);
+                }
+            }
+            $("#t1").on('keydown', function (e) {
+                if (e.which === 13) {
+                    $('#login').click();
+                }
+            });
+            $("#t2").on('keydown', function (e) {
+                if (e.which === 13) {
+                    $('#login').click();
+                }
+            });
+            $("#t11").on('keydown', function (e) {
+                if (e.which === 13) {
+                    $('#signup').click();
+                }
+            });
+            $("#t22").on('keydown', function (e) {
+                if (e.which === 13) {
+                    $('#signup').click();
+                }
+            });
+            $("#t3").on('keydown', function (e) {
+                if (e.which === 13) {
+                    $('#signup').click();
+                }
+            });
+            $("#t4").on('keydown', function (e) {
+                if (e.which === 13) {
+                    $('#signup').click();
+                }
+            });
+            $("#t5").on('keydown', function (e) {
+                if (e.which === 13) {
+                    $('#signup').click();
+                }
+            });
+            $("#t6").on('keydown', function (e) {
+                if (e.which === 13) {
+                    $('#signup').click();
+                }
+            });
+        </script>
+        <script>
+            function loaddoc1() {
+                var fname = document.getElementById("t11").value;
+                var lname = document.getElementById("t22").value;
+                var user = document.getElementById("t3").value;
+                var pass = document.getElementById("t4").value;
+                var phno = document.getElementById("t5").value;
+                var add = document.getElementById("t6").value;
+                var xmlhttp = new XMLHttpRequest();
+
+                if (fname.length === 0 || lname.length === 0 || user.length === 0 || pass.length === 0 || phno.length === 0 || add.length === 0)
+                {
+                    $('.alert').fadeIn();
+                    $('.alert').delay(1000).fadeOut();
+                    document.getElementById("demo1").innerHTML = "Please Enter valid details.";
+                }
+                else
+                {
+                    xmlhttp.onreadystatechange = function () {
+                        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                            var x = parseInt(xmlhttp.responseText);
+                            if (x === 1)
+                            {
+                                $('.alert').fadeIn();
+                                $('.alert').delay(2000).fadeOut();
+                                document.getElementById("demo1").innerHTML = "Username alread in use.";
+                            }
+                            else
+                            {
+                                window.location.replace("http://localhost:8080/ABC_beta/Profile.jsp");
+                            }
+
+                        }
+
+                    };
+                    var uri1 = encodeURIComponent(fname);
+                    var uri2 = encodeURIComponent(lname);
+                    var uri3 = encodeURIComponent(user);
+                    var uri4 = encodeURIComponent(pass);
+                    var uri5 = encodeURIComponent(phno);
+                    var uri6 = encodeURIComponent(add);
+                    xmlhttp.open("POST", "Sign_up", true);
+                    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xmlhttp.send("fname=" + uri1 + "&lname=" + uri2 + "&user=" + uri3 + "&pass=" + uri4 + "&phno=" + uri5 + "&add=" + uri6);
+                }
+
+
+
+            }
+        </script>
+        <script>
+            function openNavLogin() {
+                document.getElementById("myNavlogin").style.height = "100%";
+                document.getElementById("myNavlogin").style.width = "100%";
+            }
+            function openNavSignup() {
+                document.getElementById("myNavsignup").style.height = "100%";
+                document.getElementById("myNavsignup").style.width = "100%";
+            }
+            function closeNavsignup() {
+                document.getElementById("myNavsignup").style.height = "0%";
+
+            }
+            function closeNavlogin() {
+                document.getElementById("myNavlogin").style.height = "0%";
+
+            }
+
+        </script>
+        <script>
+
+            $(document).ready(function () {
+                // Add smooth scrolling to all links in navbar + footer link
+                $("#toTop").on("click", function (event) {
+
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                });
+
+                // Slide in elements on scroll
+                $(window).scroll(function () {
+                    $(".slideanim").each(function () {
+                        var pos = $(this).offset().top;
+
+                        var winTop = $(window).scrollTop();
+                        if (pos < winTop + 600) {
+                            $(this).addClass("slide");
+                        }
+                    });
+                });
+            });
+
+        </script>
+
+    </body>
+</html>
+

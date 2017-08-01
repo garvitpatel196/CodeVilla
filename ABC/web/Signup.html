@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="WEB-INF/Login_style.css">
+        <link rel="stylesheet" href="Login_style.css" type="text/css"/>
+        <link rel="stylesheet" href="Header.css" type="text/css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function sess() {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                        var x = parseInt(xmlhttp.responseText);
+                        if (x === 1)
+                        {
+
+                        }
+                        else
+                        {
+                            window.location.replace("http://localhost:8080/ABC/Editor.html");
+                        }
+
+                    }
+                };
+                xmlhttp.open("GET", "sess?", true);
+                xmlhttp.send();
+            }
+        </script>
+    </head>
+    <body onload="sess()">
+        <div style="position:fixed; z-index:99999; width:100%;alignment-adjust: central;">
+            <ul style="clear:left; float:right;">
+
+                <li><a class="active" href="#signup">Sign Up</a></li>
+                <li><a  href="Login.html">Login</a></li>
+                <li><a href="Home.html">Home</a></li>
+            </ul>
+        </div>
+        <div class="login-page">
+            <div class="form">
+                <form name="signupform" method="get" >
+                    <input type="text" name="fname" placeholder="First Name" id="t1" required/><br />
+                    <input type="text" name="lname" placeholder="Last Name" id="t2" required/><br />
+                    <input type="email" name="user" placeholder="Email" id="t3" style="margin-bottom: 5px!important;" required/><br />
+                    <div class="message" id="demo"></div>
+                    <input type="password" name="pass" placeholder="Password" id="t4"  style="margin-top: 5px!important;"  required/><br />
+                    <input type="text" name="phno" placeholder="Phone Number" id="t5" required/><br />
+                    <input type="text" name="add" placeholder="Address" id="t6" required><br/>
+                    <button type="button" onclick="loaddoc()">Sign UP</button>
+                    <div class="message" id="demo1" style="text-align: center!important;"></div>
+                </form>
+            </div>
+        </div>
+        <script>
+            function loaddoc() {
+                var fname = document.getElementById("t1").value;
+                var lname = document.getElementById("t2").value;
+                var user = document.getElementById("t3").value;
+                var pass = document.getElementById("t4").value;
+                var phno = document.getElementById("t5").value;
+                var add = document.getElementById("t6").value;
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (fname.length === 0 || lname.length === 0 || user.length === 0 || pass.length === 0 || phno.length === 0 || add.length === 0)
+                    {
+                        document.getElementById("demo1").innerHTML = "Please fill the form.";
+                    }
+                    else if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                        var x = parseInt(xmlhttp.responseText);
+                        if (x === 1)
+                        {
+                            document.getElementById("demo").innerHTML = "Invalid UserName.";
+                        }
+                        else
+                        {
+                            window.location.replace("http://localhost:8080/ABC/Login.html");
+                        }
+
+                    }
+                };
+                var uri1 = encodeURIComponent(fname);
+                var uri2 = encodeURIComponent(lname);
+                var uri3 = encodeURIComponent(user);
+                var uri4 = encodeURIComponent(pass);
+                var uri5 = encodeURIComponent(phno);
+                var uri6 = encodeURIComponent(add);
+                xmlhttp.open("GET", "Sign_up?fname=" + uri1 + "&lname=" + uri2 + "&user=" + uri3 + "&pass=" + uri4 + "&phno=" + uri5 + "&add=" + uri6, true);
+                xmlhttp.send();
+            }
+        </script>
+    </body>
+</html>

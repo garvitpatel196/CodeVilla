@@ -1,0 +1,241 @@
+
+<html>
+    <head>
+        <title>Profile</title>
+        <link rel="stylesheet" href="Login_style.css"> 
+        <link rel="stylesheet" href="Header.css">
+        <link rel="stylesheet" href="profilestyle.css">
+        <script src="jquery.min.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function sess() {
+                $("#s1").prop("style","display:none");
+                $("#s2").prop("style","display:none");
+                $("#s3").prop("style","display:none");
+                $("#s4").prop("style","display:none");
+                $("#s5").prop("style","display:none");
+                $("#s6").prop("style","display:none");
+//                $("#s1").hide();
+//                $("#s2").hide();
+//                $("#s3").hide();
+//                $("#s4").hide();
+//                $("#s5").hide();
+//                $("#s6").hide();
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                        var x = parseInt(xmlhttp.responseText);
+                        if (x === 1)
+                        {
+                            window.location.replace("http://localhost:8080/ABC/Login.html");
+                        }
+                        else
+                        {
+                            document.getElementById("welcome").innerHTML = "Welcome " + xmlhttp.responseText + "..!";
+                        }
+
+                    }
+                };
+                xmlhttp.open("GET", "sess?", true);
+                // xmlhttp.open("GET", "Profile?",true);
+                xmlhttp.send();
+            }
+
+        </script>
+    </head>
+    <body onload="sess()">
+        <div style="position:fixed; z-index:99999;alignment-adjust: central;  width:100%;">
+            <ul style="clear:left;float:right;">
+                <li id="welcome" class="welcome"></li>
+                <li><a href="Logout">Logout</a></li>
+                <li><a class="active" href="#profile">My Profile</a></li>
+                <li><a  href="Editor.html">Editor</a></li>
+                <li><a href="Events.html">Events</a></li>
+            </ul>
+        </div
+        >
+        <div class="prof" style="float: left;margin-top: 75px!important;">
+            <div class="panel-heading">
+                Personal Details
+            </div>
+            <div class="panel">
+                <form name="Pers_Detail" class="detail">
+                    <table>
+
+                        <tr>
+                            <td><label for="fname">First Name:</label></td>
+                            <td><input type="text" id="fn" name="fname" disabled/></td>
+                            <td class="edit"><button type="button" id="b1" >Edit</button></td>
+                            <td class="save"><button id="s1" type="button" style="display: none">Save</button></td>
+                        </tr>
+                        <tr>
+                            <td><label for="lname">Last Name:</label></td>
+                            <td><input type="text" id="ln" name="lname" disabled/> </td>
+                            <td class="edit"><button type="button" id="b2" >Edit</button></td>
+                            <td class="save"><button id="s2" type="button" style="display: none">Save</button></td>
+                        </tr>
+                        <tr>
+                            <td><label for="user">UserName:</label></td>
+                            <td><input type="text" id="us" name="user" disabled/></td>
+                            <td class="edit"><button type="button" id="b3" >Edit</button></td>
+                            <td class="save"><button id="s3" type="button" style="display: none">Save</button></td>
+                        </tr>
+                        <tr>
+                            <td><label for="pass">Password:</label></td>
+                            <td><input type="password" id="pa" name="pass" disabled/></td>
+                            <td class="edit"><button class="edit" type="button" id="b4" >Edit</button></td>
+                            <td class="save"><button id="s4" type="button" style="display: none">Save</button></td>
+                        </tr>
+                        <tr>
+                            <td><label for="phno">Ph.Number:</label></td>
+                            <td><input type="text" id="pn" name="phno" disabled/></td>
+                            <td class="edit"><button type="button" id="b5" >Edit</button></td>
+                            <td class="save"><button id="s5" type="button" style="display: none">Save</button></td>
+                        </tr>
+                        <tr>
+                            <td><label for="add">Address:</label></td>
+                            <td><input type="text" id="ad" name="add" disabled/></td>
+                            <td class="edit"><button type="button" id="b6" >Edit</button></td>
+                            <td class="save"><button id="s6" type="button" style="display: none">Save</button></td>
+                        </tr>
+                    </table>
+                </form>
+            </div> 
+        </div>
+        <div class="prof" style="float: left;">
+            <div class="panel-heading">
+                Education
+            </div>
+            <div class="panel">
+                <a href>
+                    <div class="wrap-plus">
+                        <img src="add.gif" style="height:30px;width: 30px" alt="Add Education">
+                    </div>
+                    <div class="add">Add Education</div>
+                </a>
+            </div>    
+        </div>
+        <div class="prof" style="float: left;">
+            <div class="panel-heading">
+                Programming Languages
+            </div>
+            <div class="panel">
+                <a href>
+                    <div class="wrap-plus">
+                        <img src="add.gif" style="height:30px;width: 30px" alt="Add Education">
+                    </div>
+                    <div class="add">Add Languages</div>
+                </a>
+            </div>
+        </div>
+        <div class="prof" style="float: left;">
+            <div class="panel-heading">
+                Frameworks
+            </div>
+            <div class="panel">
+                <a href>
+                    <div class="wrap-plus">
+                        <img src="add.gif" style="height:30px;width: 30px" alt="Add Education">
+                    </div>
+                    <div class="add">Add Frameworks</div>
+                </a>
+            </div>
+        </div>
+        <div class="prof" style="float: left;">
+            <div class="panel-heading">
+                Projects
+            </div>
+            <div class="panel">
+                <a href>
+                    <div class="wrap-plus">
+                        <img src="add.gif" style="height:30px;width: 30px" alt="Add Education">
+                    </div>
+                    <div class="add">Add a Project</div>
+                </a>
+            </div>
+        </div>
+        <div class="prof" style="float: left;">
+            <div class="panel-heading">
+                Publications
+            </div>
+            <div class="panel">
+                <a href>
+                    <div class="wrap-plus">
+                        <img src="add.gif" style="height:30px;width: 30px" alt="Add Education">
+                    </div>
+                    <div class="add">Add a Publication</div>
+                </a>
+            </div>
+        </div>
+        <div class="prof" style="float: left;">
+            <div class="panel-heading">
+                Achievements
+            </div>
+            <div class="panel">
+                <a href>
+                    <div class="wrap-plus">
+                        <img src="add.gif" style="height:30px;width: 30px" alt="Add Education">
+                    </div>
+                    <div class="add">Add an Achievements</div>
+                </a>
+            </div>
+        </div>
+        <script>
+
+            $('#b1').click(function () {
+                $("#s1").prop("style","display:button");
+                $('#fn').prop("disabled", false);
+            });
+            $('#s1').click(function () {
+                 $("#s1").hide();
+                 $('#fn').prop("disabled", true);
+            });
+            $('#b2').click(function () {
+                $("#s2").prop("style","display:button");
+                $('#ln').prop("disabled", false);
+            });
+            $('#s2').click(function () {
+                 $("#s2").hide();
+                 $('#ln').prop("disabled", true);
+            });
+            $('#b3').click(function () {
+                $("#s3").prop("style","display:button");
+                $('#us').prop("disabled", false);
+
+            });
+            $('#s3').click(function () {
+                 $("#s3").hide();
+                 $('#us').prop("disabled", true);
+            });
+            $('#b4').click(function () {
+                $("#s4").prop("style","display:button");
+                $('#pa').prop("disabled", false);
+
+            });
+            $('#s4').click(function () {
+                 $("#s4").hide();
+                 $('#pa').prop("disabled", true);
+            });
+            $('#b5').click(function () {
+                $("#s5").prop("style","display:button");
+                $('#pn').prop("disabled", false);
+
+            });
+            $('#s5').click(function () {
+                 $("#s5").hide();
+                 $('#pn').prop("disabled", true);
+            });
+            $('#b6').click(function () {
+                $("#s6").prop("style","display:button");
+                $('#ad').prop("disabled", false);
+
+            });
+            $('#s6').click(function () {
+                 $("#s6").hide();
+                 $('#ad').prop("disabled", true);
+            });
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Online IDE</title>
+    </head>
+    <body>
+        <div style="margin-top: 0px">
+            <div style="float: left; margin:20px; width: 50%;">
+                <form name="vinform" method="GET">
+                    <div>
+                        <h2>Editor</h2>
+                        <textarea rows="20" cols="85" name="code" id="t1"></textarea>
+                    </div>
+                    <div>
+                        <h2>Inputs</h2>
+                        <textarea rows="5" cols="85" name="inputs" id="t2"></textarea>
+                    </div>
+                    <div>
+                        <button type="button" onClick="loaddoc()">Compile & Run</button>  
+                    </div>
+                </form>
+            </div>
+            <br>
+            <h2>Output</h2>
+            <div style="border: 2px solid black;height:450px; width:45%; overflow-x: auto;overflow-y:auto;float: right" >
+                <p id="demo" style="text-align:left;margin-top:0" ></p>
+            </div>
+        </div>
+        <script>
+            function loaddoc() {
+                var str = document.getElementById("t1").value;
+                var inp = document.getElementById("t2").value;
+                if (str.length === 0) {
+                    document.getElementById("demo").innerHTML = "";
+                    return;
+                } else {
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function () {
+                        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                            document.getElementById("demo").innerHTML = xmlhttp.responseText;
+                        }
+                    };
+                    var uri = encodeURIComponent(str);
+                    var uri1 = encodeURIComponent(inp);
+                    xmlhttp.open("GET", "compile_nd_run?code=" + uri + "&inputs=" + uri1, true);
+                    xmlhttp.send();
+                }
+            }
+        </script>
+    </body>
+</html>
+
